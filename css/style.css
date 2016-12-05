@@ -130,13 +130,9 @@ body{
   padding-left:100px;
 }
 
-#content .product_con{
-  height:200px;
-  background: blue;
-}
 #content .dev_con{
   height:200px;
-  background: blue;
+  /*background: blue;*/
 }
 #content .about_call .map{
   display: block;
@@ -148,6 +144,29 @@ body{
   width: 100%;
   height: 100%;
 }
+#content .product_con{
+  width:1000px;
+  margin:10px auto;
+  height:138px;
+  position:relative;
+  overflow:hidden;}
+.product_con ul{
+  position:absolute;
+  left:0;
+  top:40px;
+  background: #fff;
+}
+.product_con li{
+  width:140px;
+  height:90px;
+  float:left;
+  /*padding:5px;*/
+  margin:3px;
+  text-align:center;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
 
 /*footer*/
 #footer{

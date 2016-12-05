@@ -28,6 +28,39 @@
 
       });
 
+      // 产品展示效果
+      var oBox=document.getElementById('product_con');
+      var oUl=oBox.getElementsByTagName('ul')[0];
+      var aLi=oUl.children;
+      oUl.innerHTML+=oUl.innerHTML;
+
+      oUl.style.width=aLi.length*aLi[0].offsetWidth+'px';
+
+      var W=oUl.offsetWidth/2;
+
+      var left=0;
+      var timer=null;
+      function toRun(){
+        timer=setInterval(function(){
+          left-=1;
+          if(left<0){
+            oUl.style.left=left%W+'px';
+          }else{
+            oUl.style.left=(left%W-W)%W+'px';
+          }
+        },30);
+      }
+      toRun();
+
+      //加事件
+      oUl.onmouseover=function(){
+        clearInterval(timer);
+      };
+
+      oUl.onmouseout=function(){
+        toRun();
+      };
+
     })
 
     </script>
@@ -117,7 +150,7 @@
         </li>
         <li class="about_call">
           <h3> 联系我们 </h3>
-          <a  href='http://map.baidu.com/' class='map'><img src='./img/map.jpg' /></a>
+          <a  href='http://map.baidu.com/' target='_blank' class='map'><img src='./img/map.jpg' /></a>
           <p>
             联系人：姜经理  <br />
             电&nbsp;&nbsp;&nbsp;&nbsp;话：010 - 67720557 13911910979   <br />
@@ -127,16 +160,30 @@
 
         </li>
       </ul>
-      <div class='product_con'>
+      <div class='product_con' id='product_con'>
         <h3> 产品展示 </h3>
         <ul>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li> <img src='./img/pro01.jpg' alt='产品展示' width='140' /></li>
+          <li> <img src='./img/pro02.jpg' alt='产品展示' width='140' /></li>
+          <li> <img src='./img/pro03.jpg' alt='产品展示' width='140' /></li>
+          <li> <img src='./img/pro04.jpg' alt='产品展示' width='140' /></li>
+          <li> <img src='./img/pro05.jpg' alt='产品展示' width='140' /></li>
+          <li> <img src='./img/pro06.jpg' alt='产品展示' width='140' /></li>
+          <li> <img src='./img/pro07.jpg' alt='产品展示' width='140' /></li>
+          <li> <img src='./img/pro08.jpg' alt='产品展示' width='140' /></li>
+          <li> <img src='./img/pro09.jpg' alt='产品展示' width='140' /></li>
         </ul>
       </div>
       <div class='dev_con'>
         <h3> 设备介绍 </h3>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+
       </div>
 
     </div>
@@ -155,7 +202,6 @@
           业务经理：姜经理 <br/>
           联系电话：13911910979 <br/>
           联系地址：北京市朝阳区百子湾路27号(易构空间大厦西行200米)
-
         </li>
         <li class='code'>
           <img src='./img/qrcode.jpg' width='150' height='150' />
