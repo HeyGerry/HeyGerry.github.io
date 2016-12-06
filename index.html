@@ -29,37 +29,39 @@
       });
 
       // 产品展示效果
-      var oBox=document.getElementById('product_con');
-      var oUl=oBox.getElementsByTagName('ul')[0];
-      var aLi=oUl.children;
-      oUl.innerHTML+=oUl.innerHTML;
+      runfn('product_con');
+      runfn('dev_con');
 
-      oUl.style.width=aLi.length*aLi[0].offsetWidth+'px';
+      function runfn(id){
+        var oBox=document.getElementById(id);
+        var oUl=oBox.getElementsByTagName('ul')[0];
+        var aLi=oUl.children;
+        oUl.innerHTML+=oUl.innerHTML;
+        oUl.style.width=aLi.length*aLi[0].offsetWidth+'px';
+        var W=oUl.offsetWidth/2;
 
-      var W=oUl.offsetWidth/2;
-
-      var left=0;
-      var timer=null;
-      function toRun(){
-        timer=setInterval(function(){
-          left-=1;
-          if(left<0){
-            oUl.style.left=left%W+'px';
-          }else{
-            oUl.style.left=(left%W-W)%W+'px';
-          }
-        },30);
-      }
-      toRun();
-
-      //加事件
-      oUl.onmouseover=function(){
-        clearInterval(timer);
-      };
-
-      oUl.onmouseout=function(){
+        var left=0;
+        var timer=null;
         toRun();
-      };
+        function toRun(){
+          timer=setInterval(function(){
+            left-=1;
+            if(left<0){
+              oUl.style.left=left%W+'px';
+            }else{
+              oUl.style.left=(left%W-W)%W+'px';
+            }
+          },30);
+        }
+        //加事件
+        oUl.onmouseover=function(){
+          clearInterval(timer);
+        };
+
+        oUl.onmouseout=function(){
+          toRun();
+        };
+      }
 
     })
 
@@ -172,18 +174,26 @@
           <li> <img src='./img/pro07.jpg' alt='产品展示' width='140' /></li>
           <li> <img src='./img/pro08.jpg' alt='产品展示' width='140' /></li>
           <li> <img src='./img/pro09.jpg' alt='产品展示' width='140' /></li>
+          <li> <img src='./img/pro10.jpg' alt='产品展示' width='140' /></li>
+          <li> <img src='./img/pro11.jpg' alt='产品展示' width='140' /></li>
+          <li> <img src='./img/pro12.jpg' alt='产品展示' width='140' /></li>
+          <li> <img src='./img/pro13.jpg' alt='产品展示' width='140' /></li>
         </ul>
       </div>
-      <div class='dev_con'>
+      <div class='dev_con' id='dev_con'>
         <h3> 设备介绍 </h3>
         <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li> <img src='./img/dev01.jpg' alt='设备展示' width='140' /></li>
+          <li> <img src='./img/dev02.gif' alt='设备展示' width='140' /></li>
+          <li> <img src='./img/dev03.jpg' alt='设备展示' width='140' /></li>
+          <li> <img src='./img/dev04.jpg' alt='设备展示' width='140' /></li>
+          <li> <img src='./img/dev05.jpg' alt='设备展示' width='140' /></li>
+          <li> <img src='./img/dev06.jpg' alt='设备展示' width='140' /></li>
+          <li> <img src='./img/dev07.jpg' alt='设备展示' width='140' /></li>
+          <li> <img src='./img/dev08.jpg' alt='设备展示' width='140' /></li>
+          <li> <img src='./img/dev09.jpg' alt='设备展示' width='140' /></li>
+          <li> <img src='./img/dev10.jpg' alt='设备展示' width='140' /></li>
         </ul>
-
-
       </div>
 
     </div>
